@@ -122,12 +122,12 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         }
     }
     
-    
     func session(session: MCSession, didReceiveData data: NSData, fromPeer peerID: MCPeerID) {
         let dictionary: [String: AnyObject] = ["data": data, "fromPeer": peerID]
-        NSNotificationCenter.defaultCenter().postNotificationName("receivedMPCDataNotification", object: dictionary)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(
+            "receivedMPCDataNotification", object: dictionary)
     }
-    
     
     func session(session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, withProgress progress: NSProgress) { }
     
@@ -135,21 +135,12 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     func session(session: MCSession, didReceiveStream stream: NSInputStream, withName streamName: String, fromPeer peerID: MCPeerID) { }
     
-    
-    
     // MARK: Custom method implementation
     
-    func sendData(dictionaryWithData dictionary: Dictionary<String, String>, toPeer targetPeer: MCPeerID) -> Bool {
-//        let dataToSend = NSKeyedArchiver.archivedDataWithRootObject(dictionary)
-//        let peersArray = NSArray(object: targetPeer)
-//        var error: NSError?
+    func sendData(dictionaryWithData dictionary: Dictionary<String, String>, toPeer targetPeer: MCPeerID) {
+        let dataToSend = NSKeyedArchiver.archivedDataWithRootObject(dictionary)
+        let peersArray = NSArray(object: targetPeer)
         
-//        if !session.sendData(dataToSend, toPeers: peersArray, withMode: MCSessionSendDataMode.Reliable, error: &error) {
-//            Log.debug?.message(error?.localizedDescription)
-//            return false
-//        }
-        
-        return true
+        try! session.sendData(dataToSend, toPeers: peersArray as! [MCPeerID], withMode: MCSessionSendDataMode.Reliable)
     }
-    
 }
