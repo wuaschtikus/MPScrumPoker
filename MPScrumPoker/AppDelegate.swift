@@ -7,15 +7,29 @@
 //
 
 import UIKit
+import CleanroomLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var mpcManager: MPCManager!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        Log.enable(minimumSeverity: .Info,
+                   debugMode: false,
+                   verboseDebugMode: false,
+                   timestampStyle: .Default,
+                   severityStyle: .Xcode,
+                   showCallSite: true,
+                   showCallingThread: false,
+                   suppressColors: false,
+                   filters: [])
+        
+        self.mpcManager = MPCManager()
+        
         return true
     }
 
