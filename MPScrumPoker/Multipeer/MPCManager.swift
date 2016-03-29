@@ -11,16 +11,17 @@ import MultipeerConnectivity
 import CleanroomLogger
 
 protocol MPCManagerDelegate {
-    func foundPeer()
-    func lostPeer()
+    func foundPeer(peerId:MCPeerID)
+    func lostPeer(peerId:MCPeerID)
     func invitationWasReceived(fromPeer: String)
     func connectedWithPeer(peerID: MCPeerID)
 }
 
-
 class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, MCNearbyServiceAdvertiserDelegate {
     
     // MARK: - Properties
+    
+    let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
     
     /// Delegate which informs about certain session events
     var delegate: MPCManagerDelegate?
@@ -48,16 +49,21 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     override init() {
         super.init()
         
-        peer = MCPeerID(displayName: UIDevice.currentDevice().name)
+        self.peer = MCPeerID(displayName: UIDevice.currentDevice().name)
         
-        session = MCSession(peer: peer)
-        session.delegate = self
+        self.session = MCSession(peer: peer)
+        self.session.delegate = self
         
-        browser = MCNearbyServiceBrowser(peer: peer, serviceType: Constants.Multipeer.serviceType)
-        browser.delegate = self
+        self.browser = MCNearbyServiceBrowser(
+            peer: peer,
+            serviceType: AppConstants.Multipeer.serviceType)
+        self.browser.delegate = self
         
-        advertiser = MCNearbyServiceAdvertiser(peer: peer, discoveryInfo: nil, serviceType: Constants.Multipeer.serviceType)
-        advertiser.delegate = self
+        self.advertiser = MCNearbyServiceAdvertiser(
+            peer: peer,
+            discoveryInfo: nil,
+            serviceType: AppConstants.Multipeer.serviceType)
+        self.advertiser.delegate = self
     }
     
     
@@ -68,7 +74,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         Log.debug?.message("Found peer with PeerID: \(peerID.displayName)")
         
         foundPeers.append(peerID)
-        delegate?.foundPeer()
+        delegate?.foundPeer(peerID)
     }
     
     func browser(browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
@@ -81,26 +87,25 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
         if let actualIndex = index {
             self.foundPeers.removeAtIndex(actualIndex)
+            Log.debug?.message("Removed peerID from found peers")
         }
         
-        delegate?.lostPeer()
+        delegate?.lostPeer(peerID)
     }
-    
     
     func browser(browser: MCNearbyServiceBrowser, didNotStartBrowsingForPeers error: NSError) {
         Log.error?.message("Error when starting to browse for peers: \(error)")
     }
     
-    // MARK: MCNearbyServiceAdvertiserDelegate
+    // MARK: - MCNearbyServiceAdvertiserDelegate
     
     func advertiser(advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: NSData?, invitationHandler: ((Bool, MCSession) -> Void)) {
         
-        Log.debug?.message("Did recieve invitation")
+        Log.debug?.message("Did recieve invitation from: \(peerID.displayName)")
         
         self.invitationHandler = invitationHandler
         delegate?.invitationWasReceived(peerID.displayName)
     }
-    
     
     func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
         Log.debug?.message("Error when start to advertise: \(error.localizedDescription)")
@@ -109,7 +114,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     // MARK: - MCSessionDelegate
     
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
-        switch state{
+        switch state {
         case MCSessionState.Connected:
             Log.debug?.message("Connected to session: \(session)")
             delegate?.connectedWithPeer(peerID)
@@ -141,6 +146,8 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         let dataToSend = NSKeyedArchiver.archivedDataWithRootObject(dictionary)
         let peersArray = NSArray(object: targetPeer)
         
-        try! session.sendData(dataToSend, toPeers: peersArray as! [MCPeerID], withMode: MCSessionSendDataMode.Reliable)
+        try! session.sendData(dataToSend,
+                              toPeers: peersArray as! [MCPeerID],
+                              withMode: MCSessionSendDataMode.Reliable)
     }
 }

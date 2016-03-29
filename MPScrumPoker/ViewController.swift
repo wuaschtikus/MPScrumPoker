@@ -67,13 +67,19 @@ class ViewController: UIViewController, MPCManagerDelegate {
     
     // MARK: - MCPManagerDelegate
     
-    func foundPeer() {
-        Log.debug?.message("Found peer")
+    func foundPeer(peerId:MCPeerID) {
+        Log.debug?.message("Found peer: \(peerId.displayName)")
         self.startTableViewDatasource = StartControllerTableViewDatasoure(startController: self)
+        self.appDelegate.mpcManager.browser.invitePeer(
+            peerId,
+            toSession: appDelegate.mpcManager.session,
+            withContext: nil,
+            timeout: AppConstants.Multipeer.invitationTimeout)
+        self.view.makeToast("Invited pear: \(peerId.displayName)")
     }
     
-    func lostPeer() {
-        Log.debug?.message("Lost peer")
+    func lostPeer(peerId:MCPeerID) {
+        Log.debug?.message("Lost peer: \(peerId.displayName)")
     }
     
     func startStopAdvertising(sender: AnyObject) {
@@ -81,11 +87,11 @@ class ViewController: UIViewController, MPCManagerDelegate {
         var title: String
         var msg: String
         if self.isAdvertising == true {
-            title = Constants.Alert.StopAdvertising.title
-            msg = Constants.Alert.StopAdvertising.msg
-        } else{
-            title = Constants.Alert.StartAdvertising.title
-            msg = Constants.Alert.StartAdvertising.msg
+            title = AppConstants.Alert.StopAdvertising.title
+            msg = AppConstants.Alert.StopAdvertising.msg
+        } else {
+            title = AppConstants.Alert.StartAdvertising.title
+            msg = AppConstants.Alert.StartAdvertising.msg
         }
         
         let alert = UIAlertController(
@@ -94,13 +100,13 @@ class ViewController: UIViewController, MPCManagerDelegate {
             preferredStyle: UIAlertControllerStyle.Alert)
         
         alert.addAction(UIAlertAction(
-            title: Constants.Alert.NoButtonTitle,
+            title: AppConstants.Alert.NoButtonTitle,
             style: UIAlertActionStyle.Default,
             handler: nil))
         
         alert.addAction(
             UIAlertAction(
-                title: Constants.Alert.OkButtonTitle,
+                title: AppConstants.Alert.OkButtonTitle,
                 style: UIAlertActionStyle.Default) {
                 (alertAction) -> Void in
                 
@@ -117,29 +123,9 @@ class ViewController: UIViewController, MPCManagerDelegate {
     }
     
     func invitationWasReceived(fromPeer: String) {
+        Log.debug?.message("Recieved invite")
+        self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
         
-        let alert = UIAlertController(
-            title: Constants.Alert.Invitation.title,
-            message: String(format: Constants.Alert.Invitation.msg, fromPeer),
-            preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alert.addAction(
-            UIAlertAction(
-            title: Constants.Alert.OkButtonTitle,
-            style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
-        })
-        
-        alert.addAction(
-            UIAlertAction(
-            title: "Cancel",
-            style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            self.appDelegate.mpcManager.invitationHandler(false, self.appDelegate.mpcManager.session)
-        })
-        
-        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
-            self.presentViewController(alert, animated: true, completion: nil)
-        }
     }
     
     func connectedWithPeer(peerID: MCPeerID) {
