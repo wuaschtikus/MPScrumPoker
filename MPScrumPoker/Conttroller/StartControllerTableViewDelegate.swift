@@ -30,4 +30,18 @@ class StartControllerTableViewDelegate : NSObject, UITableViewDelegate {
         
         self.appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelegate.mpcManager.session, withContext: nil, timeout: 20)
     }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if self.startController.isAdvertising == true {
+            let header = UIViewLoadingHeader.loadFromNibNamed("UIViewLoadingHeader") as! UIViewLoadingHeader
+            header.activityIndicator.startAnimating()
+            return header
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
+    }
 }

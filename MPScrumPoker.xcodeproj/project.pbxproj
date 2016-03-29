@@ -23,6 +23,9 @@
 		F70CE6041CAA74850086E6F6 /* CleanroomASL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE5FF1CAA746F0086E6F6 /* CleanroomASL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F70CE6061CAA74850086E6F6 /* CleanroomLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE6001CAA746F0086E6F6 /* CleanroomLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F70CE60A1CAADFDB0086E6F6 /* UIViewToastExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6091CAADFDB0086E6F6 /* UIViewToastExtension.swift */; };
+		F70CE60D1CAAE5230086E6F6 /* UIViewLoadingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE60C1CAAE5230086E6F6 /* UIViewLoadingHeader.swift */; };
+		F70CE60F1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70CE60E1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib */; };
+		F70CE6131CAAE6340086E6F6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6121CAAE6340086E6F6 /* UIViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,9 @@
 		F70CE5FF1CAA746F0086E6F6 /* CleanroomASL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleanroomASL.framework; path = Carthage/Build/iOS/CleanroomASL.framework; sourceTree = SOURCE_ROOT; };
 		F70CE6001CAA746F0086E6F6 /* CleanroomLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleanroomLogger.framework; path = Carthage/Build/iOS/CleanroomLogger.framework; sourceTree = SOURCE_ROOT; };
 		F70CE6091CAADFDB0086E6F6 /* UIViewToastExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewToastExtension.swift; sourceTree = "<group>"; };
+		F70CE60C1CAAE5230086E6F6 /* UIViewLoadingHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewLoadingHeader.swift; sourceTree = "<group>"; };
+		F70CE60E1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIViewLoadingHeader.xib; sourceTree = "<group>"; };
+		F70CE6121CAAE6340086E6F6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +136,7 @@
 		F70CE5C31CAA5D880086E6F6 /* MPScrumPoker */ = {
 			isa = PBXGroup;
 			children = (
-				F70CE6081CAADFD10086E6F6 /* Extensions */,
+				F70CE60B1CAAE50F0086E6F6 /* Ui */,
 				F70CE5C41CAA5D880086E6F6 /* AppDelegate.swift */,
 				F70CE5F71CAA5F4A0086E6F6 /* AppConstants.swift */,
 				F70CE5C61CAA5D880086E6F6 /* ViewController.swift */,
@@ -138,6 +144,7 @@
 				F70CE5CB1CAA5D880086E6F6 /* Assets.xcassets */,
 				F70CE5CD1CAA5D880086E6F6 /* LaunchScreen.storyboard */,
 				F70CE5D01CAA5D880086E6F6 /* Info.plist */,
+				F70CE6081CAADFD10086E6F6 /* Extensions */,
 				F70CE5FE1CAA745C0086E6F6 /* Carthage */,
 				F70CE5F91CAA64D50086E6F6 /* Conttroller */,
 				F70CE5F41CAA5E100086E6F6 /* Multipeer */,
@@ -193,8 +200,18 @@
 			isa = PBXGroup;
 			children = (
 				F70CE6091CAADFDB0086E6F6 /* UIViewToastExtension.swift */,
+				F70CE6121CAAE6340086E6F6 /* UIViewExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F70CE60B1CAAE50F0086E6F6 /* Ui */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE60C1CAAE5230086E6F6 /* UIViewLoadingHeader.swift */,
+				F70CE60E1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib */,
+			);
+			path = Ui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +319,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70CE60F1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib in Resources */,
 				F70CE5CF1CAA5D880086E6F6 /* LaunchScreen.storyboard in Resources */,
 				F70CE5CC1CAA5D880086E6F6 /* Assets.xcassets in Resources */,
 				F70CE5CA1CAA5D880086E6F6 /* Main.storyboard in Resources */,
@@ -333,7 +351,9 @@
 				F70CE5C51CAA5D880086E6F6 /* AppDelegate.swift in Sources */,
 				F70CE5FB1CAA64DF0086E6F6 /* StartControllerTableViewDelegate.swift in Sources */,
 				F70CE5F61CAA5E180086E6F6 /* MPCManager.swift in Sources */,
+				F70CE60D1CAAE5230086E6F6 /* UIViewLoadingHeader.swift in Sources */,
 				F70CE5F81CAA5F4A0086E6F6 /* AppConstants.swift in Sources */,
+				F70CE6131CAAE6340086E6F6 /* UIViewExtension.swift in Sources */,
 				F70CE5FD1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift in Sources */,
 				F70CE60A1CAADFDB0086E6F6 /* UIViewToastExtension.swift in Sources */,
 			);

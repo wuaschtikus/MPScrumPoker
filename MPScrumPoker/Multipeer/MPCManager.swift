@@ -116,14 +116,14 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
         switch state {
         case MCSessionState.Connected:
-            Log.debug?.message("Connected to session: \(session)")
+            Log.debug?.message("Connected to session with \(session.connectedPeers.count) available peers")
             delegate?.connectedWithPeer(peerID)
             
         case MCSessionState.Connecting:
-            Log.debug?.message("Connecting to session: \(session)")
+            Log.debug?.message("Connecting to session with myPeerID: \(session.myPeerID)")
             
         default:
-            Log.debug?.message("Did not connect to session: \(session)")
+            Log.debug?.message("Did not connect to session with myPeerID: \(session.myPeerID)")
         }
     }
     

@@ -107,7 +107,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
         alert.addAction(
             UIAlertAction(
                 title: AppConstants.Alert.OkButtonTitle,
-                style: UIAlertActionStyle.Default) {
+            style: UIAlertActionStyle.Default) {
                 (alertAction) -> Void in
                 
                 if self.isAdvertising == true {
@@ -117,6 +117,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
                 }
                 
                 self.isAdvertising = !self.isAdvertising
+                self.tableView.reloadData()
             })
         
         self.presentViewController(alert, animated: true, completion: nil)
