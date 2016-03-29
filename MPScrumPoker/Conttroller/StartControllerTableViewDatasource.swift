@@ -38,6 +38,7 @@ class StartControllerTableViewDatasoure : NSObject, UITableViewDataSource {
     @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "Cell")
         cell.textLabel?.text = self.appDelegate.mpcManager.foundPeers[indexPath.row].displayName
+        cell.userInteractionEnabled = false
         return cell
     }
 }

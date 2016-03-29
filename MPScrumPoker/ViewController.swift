@@ -46,6 +46,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
         
         self.appDelegate.mpcManager.delegate = self
         self.appDelegate.mpcManager.browser.startBrowsingForPeers()
+        self.appDelegate.mpcManager.advertiser.startAdvertisingPeer()
         self.isAdvertising = true
         
         // setup tableview
@@ -79,7 +80,6 @@ class ViewController: UIViewController, MPCManagerDelegate {
     }
     
     func lostPeer(peerId:MCPeerID) {
-        Log.debug?.message("Lost peer: \(peerId.displayName)")
     }
     
     func startStopAdvertising(sender: AnyObject) {
@@ -99,15 +99,16 @@ class ViewController: UIViewController, MPCManagerDelegate {
             message: msg,
             preferredStyle: UIAlertControllerStyle.Alert)
         
-        alert.addAction(UIAlertAction(
-            title: AppConstants.Alert.NoButtonTitle,
-            style: UIAlertActionStyle.Default,
-            handler: nil))
+        alert.addAction(
+            UIAlertAction(
+                title: AppConstants.Alert.NoButtonTitle,
+                style: UIAlertActionStyle.Default,
+                handler: nil))
         
         alert.addAction(
             UIAlertAction(
                 title: AppConstants.Alert.OkButtonTitle,
-            style: UIAlertActionStyle.Default) {
+                style: UIAlertActionStyle.Default) {
                 (alertAction) -> Void in
                 
                 if self.isAdvertising == true {
@@ -123,14 +124,19 @@ class ViewController: UIViewController, MPCManagerDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func invitationWasReceived(fromPeer: String) {
-        Log.debug?.message("Recieved invite")
-        self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
-        
+    func invitationWasReceived(fromPeer: MCPeerID) {
+        dispatch_async(dispatch_get_main_queue(),{
+            Log.debug?.message("Accepted Invite from peer: \(fromPeer.displayName)")
+            self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
+            self.appDelegate.mpcManager.foundPeers.append(fromPeer)
+            self.tableView.reloadData()
+        })
     }
     
     func connectedWithPeer(peerID: MCPeerID) {
-        Log.debug?.message("Connected with Peer: \(peerID.displayName)")
+        dispatch_async(dispatch_get_main_queue(),{
+            self.tableView.reloadData()
+        })
     }
 }
 

@@ -13,7 +13,7 @@ import CleanroomLogger
 protocol MPCManagerDelegate {
     func foundPeer(peerId:MCPeerID)
     func lostPeer(peerId:MCPeerID)
-    func invitationWasReceived(fromPeer: String)
+    func invitationWasReceived(fromPeer: MCPeerID)
     func connectedWithPeer(peerID: MCPeerID)
 }
 
@@ -50,7 +50,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         super.init()
         
         self.peer = MCPeerID(displayName: UIDevice.currentDevice().name)
-        
         self.session = MCSession(peer: peer)
         self.session.delegate = self
         
@@ -104,7 +103,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         Log.debug?.message("Did recieve invitation from: \(peerID.displayName)")
         
         self.invitationHandler = invitationHandler
-        delegate?.invitationWasReceived(peerID.displayName)
+        delegate?.invitationWasReceived(peerID)
     }
     
     func advertiser(advertiser: MCNearbyServiceAdvertiser, didNotStartAdvertisingPeer error: NSError) {
@@ -114,10 +113,18 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     // MARK: - MCSessionDelegate
     
     func session(session: MCSession, peer peerID: MCPeerID, didChangeState state: MCSessionState) {
+        
         switch state {
+            
         case MCSessionState.Connected:
             Log.debug?.message("Connected to session with \(session.connectedPeers.count) available peers")
-            delegate?.connectedWithPeer(peerID)
+            for peerId in session.connectedPeers {
+                self.appDelegate.mpcManager.browser.invitePeer(
+                    peerId,
+                    toSession: appDelegate.mpcManager.session,
+                    withContext: nil,
+                    timeout: AppConstants.Multipeer.invitationTimeout)
+            }
             
         case MCSessionState.Connecting:
             Log.debug?.message("Connecting to session with myPeerID: \(session.myPeerID)")
