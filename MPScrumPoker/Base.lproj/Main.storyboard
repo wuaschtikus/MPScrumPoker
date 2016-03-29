@@ -7,6 +7,26 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="psl-5f-AKL">
+            <objects>
+                <viewController id="gE1-Ek-aW2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q46-W3-wC3"/>
+                        <viewControllerLayoutGuide type="bottom" id="gOI-QO-p4M"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m9O-g3-sfa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CVx-kf-R74"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNW-JI-38j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="525.5" y="307.5"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MPScrumPoker" customModuleProvider="target" sceneMemberID="viewController">
@@ -57,7 +77,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2CT-7h-iHN">
-                                <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2CT-7h-iHN" id="vEm-Qy-lda">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
@@ -87,12 +107,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="MTj-dX-7kF"/>
+                        <segue destination="gE1-Ek-aW2" kind="relationship" relationship="rootViewController" id="9FJ-jB-Udr"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1b-6x-8VM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="307"/>
+            <point key="canvasLocation" x="35.5" y="307.5"/>
         </scene>
     </scenes>
 </document>
