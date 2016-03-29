@@ -16,7 +16,6 @@ class ViewController: UIViewController, MPCManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBAction func startStopAdvertizing(sender: AnyObject) {
-        self.startStopAdvertising(sender)
     }
     
     // MARK: - Properties
@@ -77,7 +76,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
         self.tableView.reloadData()
     }
     
-    func startStopAdvertising(sender: AnyObject) {
+    func startStopAdvertising() {
         
         var title: String
         var msg: String
