@@ -70,16 +70,11 @@ class ViewController: UIViewController, MPCManagerDelegate {
     
     func foundPeer(peerId:MCPeerID) {
         Log.debug?.message("Found peer: \(peerId.displayName)")
-        self.startTableViewDatasource = StartControllerTableViewDatasoure(startController: self)
-        self.appDelegate.mpcManager.browser.invitePeer(
-            peerId,
-            toSession: appDelegate.mpcManager.session,
-            withContext: nil,
-            timeout: AppConstants.Multipeer.invitationTimeout)
-        self.view.makeToast("Invited pear: \(peerId.displayName)")
+        self.tableView.reloadData()
     }
     
     func lostPeer(peerId:MCPeerID) {
+        self.tableView.reloadData()
     }
     
     func startStopAdvertising(sender: AnyObject) {
@@ -127,8 +122,6 @@ class ViewController: UIViewController, MPCManagerDelegate {
     func invitationWasReceived(fromPeer: MCPeerID) {
         dispatch_async(dispatch_get_main_queue(),{
             Log.debug?.message("Accepted Invite from peer: \(fromPeer.displayName)")
-            self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
-            self.appDelegate.mpcManager.foundPeers.append(fromPeer)
             self.tableView.reloadData()
         })
     }

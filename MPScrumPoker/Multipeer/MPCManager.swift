@@ -40,9 +40,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
     
     /// References found peer in this multipeer session
     var foundPeers = [MCPeerID]()
-
-    /// Is called when another user wants to invite you
-    var invitationHandler:  ((Bool, MCSession) -> Void)!
     
     // MARK:  Lifecycle
     
@@ -102,7 +99,7 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
         
         Log.debug?.message("Did recieve invitation from: \(peerID.displayName)")
         
-        self.invitationHandler = invitationHandler
+        invitationHandler(true, self.appDelegate.mpcManager.session)
         delegate?.invitationWasReceived(peerID)
     }
     
@@ -118,13 +115,6 @@ class MPCManager: NSObject, MCSessionDelegate, MCNearbyServiceBrowserDelegate, M
             
         case MCSessionState.Connected:
             Log.debug?.message("Connected to session with \(session.connectedPeers.count) available peers")
-            for peerId in session.connectedPeers {
-                self.appDelegate.mpcManager.browser.invitePeer(
-                    peerId,
-                    toSession: appDelegate.mpcManager.session,
-                    withContext: nil,
-                    timeout: AppConstants.Multipeer.invitationTimeout)
-            }
             
         case MCSessionState.Connecting:
             Log.debug?.message("Connecting to session with myPeerID: \(session.myPeerID)")
