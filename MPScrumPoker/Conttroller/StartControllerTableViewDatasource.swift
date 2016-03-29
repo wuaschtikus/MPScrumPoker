@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CleanroomLogger
 
 class StartControllerTableViewDatasoure : NSObject, UITableViewDataSource {
     
@@ -18,6 +19,9 @@ class StartControllerTableViewDatasoure : NSObject, UITableViewDataSource {
     // MARK: - Lifecycle
     
     init(startController:ViewController) {
+        
+        Log.debug?.message("Initialized StartControllerTableViewDatasoure")
+        
         self.startController = startController
     }
     

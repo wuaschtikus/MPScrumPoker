@@ -128,7 +128,6 @@
 		F70CE5C31CAA5D880086E6F6 /* MPScrumPoker */ = {
 			isa = PBXGroup;
 			children = (
-				F70CE5FE1CAA745C0086E6F6 /* Carthage */,
 				F70CE5C41CAA5D880086E6F6 /* AppDelegate.swift */,
 				F70CE5C61CAA5D880086E6F6 /* ViewController.swift */,
 				F70CE5C81CAA5D880086E6F6 /* Main.storyboard */,
@@ -136,6 +135,7 @@
 				F70CE5CD1CAA5D880086E6F6 /* LaunchScreen.storyboard */,
 				F70CE5D01CAA5D880086E6F6 /* Info.plist */,
 				F70CE5F71CAA5F4A0086E6F6 /* Constants.swift */,
+				F70CE5FE1CAA745C0086E6F6 /* Carthage */,
 				F70CE5F91CAA64D50086E6F6 /* Conttroller */,
 				F70CE5F41CAA5E100086E6F6 /* Multipeer */,
 			);

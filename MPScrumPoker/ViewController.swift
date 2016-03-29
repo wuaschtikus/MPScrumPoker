@@ -8,6 +8,7 @@
 
 import UIKit
 import MultipeerConnectivity
+import CleanroomLogger
 
 class ViewController: UIViewController, MPCManagerDelegate {
     
@@ -51,7 +52,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
         
         self.prepareTableView()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -67,60 +68,74 @@ class ViewController: UIViewController, MPCManagerDelegate {
     // MARK: - MCPManagerDelegate
     
     func foundPeer() {
-        print("Found peer")
+        Log.debug?.message("Found peer")
         self.startTableViewDatasource = StartControllerTableViewDatasoure(startController: self)
     }
     
     func lostPeer() {
-        print("Lost peer")
+        Log.debug?.message("Lost peer")
     }
     
     func startStopAdvertising(sender: AnyObject) {
-        let actionSheet = UIAlertController(title: "", message: "Change Visibility", preferredStyle: UIAlertControllerStyle.Alert)
         
-        var actionTitle: String
-        if isAdvertising == true {
-            actionTitle = "Make me invisible to others"
-        }
-        else{
-            actionTitle = "Make me visible to others"
-        }
-        
-        let visibilityAction: UIAlertAction = UIAlertAction(title: actionTitle, style: UIAlertActionStyle.Default) { (alertAction) -> Void in
-            
-            if self.isAdvertising == true {
-                self.appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
-            }
-            else{
-                self.appDelegate.mpcManager.advertiser.startAdvertisingPeer()
-            }
-            
-            self.isAdvertising = !self.isAdvertising
+        var title: String
+        var msg: String
+        if self.isAdvertising == true {
+            title = Constants.Alert.StopAdvertising.title
+            msg = Constants.Alert.StopAdvertising.msg
+        } else{
+            title = Constants.Alert.StartAdvertising.title
+            msg = Constants.Alert.StartAdvertising.msg
         }
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
-            
-        }
+        let alert = UIAlertController(
+            title: title,
+            message: msg,
+            preferredStyle: UIAlertControllerStyle.Alert)
         
-        actionSheet.addAction(visibilityAction)
-        actionSheet.addAction(cancelAction)
+        alert.addAction(UIAlertAction(
+            title: Constants.Alert.NoButtonTitle,
+            style: UIAlertActionStyle.Default,
+            handler: nil))
         
-        self.presentViewController(actionSheet, animated: true, completion: nil)
+        alert.addAction(
+            UIAlertAction(
+                title: Constants.Alert.OkButtonTitle,
+                style: UIAlertActionStyle.Default) {
+                (alertAction) -> Void in
+                
+                if self.isAdvertising == true {
+                    self.appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
+                }  else {
+                    self.appDelegate.mpcManager.advertiser.startAdvertisingPeer()
+                }
+                
+                self.isAdvertising = !self.isAdvertising
+            })
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func invitationWasReceived(fromPeer: String) {
-        let alert = UIAlertController(title: "", message: "\(fromPeer) wants to chat with you.", preferredStyle: UIAlertControllerStyle.Alert)
         
-        let acceptAction: UIAlertAction = UIAlertAction(title: "Accept", style: UIAlertActionStyle.Default) { (alertAction) -> Void in
+        let alert = UIAlertController(
+            title: Constants.Alert.Invitation.title,
+            message: String(format: Constants.Alert.Invitation.msg, fromPeer),
+            preferredStyle: UIAlertControllerStyle.Alert)
+        
+        alert.addAction(
+            UIAlertAction(
+            title: Constants.Alert.OkButtonTitle,
+            style: UIAlertActionStyle.Default) { (alertAction) -> Void in
             self.appDelegate.mpcManager.invitationHandler(true, self.appDelegate.mpcManager.session)
-        }
+        })
         
-        let declineAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
+        alert.addAction(
+            UIAlertAction(
+            title: "Cancel",
+            style: UIAlertActionStyle.Cancel) { (alertAction) -> Void in
             self.appDelegate.mpcManager.invitationHandler(false, self.appDelegate.mpcManager.session)
-        }
-        
-        alert.addAction(acceptAction)
-        alert.addAction(declineAction)
+        })
         
         NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
             self.presentViewController(alert, animated: true, completion: nil)
@@ -128,7 +143,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
     }
     
     func connectedWithPeer(peerID: MCPeerID) {
-        print("Connected with Peer: \(peerID.displayName)")
+        Log.debug?.message("Connected with Peer: \(peerID.displayName)")
     }
 }
 
