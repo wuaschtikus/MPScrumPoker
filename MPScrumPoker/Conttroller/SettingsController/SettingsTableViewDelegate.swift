@@ -20,4 +20,18 @@ class SettingsTableViewDelegate : NSObject, UITableViewDelegate {
         super.init()
         self.settingsController = settingsController
     }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 {
+            let headerView = UIView.loadFromNibNamed("UIViewLoadingHeader") as! UIViewLoadingHeader
+            headerView.activityIndicator.startAnimating()
+            return headerView
+        } else {
+            return nil
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
 }

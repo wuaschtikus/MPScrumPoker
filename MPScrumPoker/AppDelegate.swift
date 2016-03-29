@@ -39,8 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MPCManagerDelegate {
                    suppressColors: false,
                    filters: [])
         
-        
-        
         return true
     }
     
