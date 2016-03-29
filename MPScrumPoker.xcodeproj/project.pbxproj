@@ -25,6 +25,9 @@
 		F70CE60D1CAAE5230086E6F6 /* UIViewLoadingHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE60C1CAAE5230086E6F6 /* UIViewLoadingHeader.swift */; };
 		F70CE60F1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70CE60E1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib */; };
 		F70CE6131CAAE6340086E6F6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6121CAAE6340086E6F6 /* UIViewExtension.swift */; };
+		F70CE6151CAAF83C0086E6F6 /* Bohr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE6141CAAF83C0086E6F6 /* Bohr.framework */; };
+		F70CE6161CAAF8750086E6F6 /* Bohr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE6141CAAF83C0086E6F6 /* Bohr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F70CE6191CAAF8C60086E6F6 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6181CAAF8C60086E6F6 /* SettingsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,7 @@
 			files = (
 				F70CE6041CAA74850086E6F6 /* CleanroomASL.framework in Embed Frameworks */,
 				F70CE6061CAA74850086E6F6 /* CleanroomLogger.framework in Embed Frameworks */,
+				F70CE6161CAAF8750086E6F6 /* Bohr.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +86,8 @@
 		F70CE60C1CAAE5230086E6F6 /* UIViewLoadingHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewLoadingHeader.swift; sourceTree = "<group>"; };
 		F70CE60E1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIViewLoadingHeader.xib; sourceTree = "<group>"; };
 		F70CE6121CAAE6340086E6F6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		F70CE6141CAAF83C0086E6F6 /* Bohr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bohr.framework; path = Carthage/Build/iOS/Bohr.framework; sourceTree = SOURCE_ROOT; };
+		F70CE6181CAAF8C60086E6F6 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 			files = (
 				F70CE6011CAA746F0086E6F6 /* CleanroomASL.framework in Frameworks */,
 				F70CE6021CAA74700086E6F6 /* CleanroomLogger.framework in Frameworks */,
+				F70CE6151CAAF83C0086E6F6 /* Bohr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +186,7 @@
 		F70CE5F91CAA64D50086E6F6 /* Conttroller */ = {
 			isa = PBXGroup;
 			children = (
+				F70CE6171CAAF8C00086E6F6 /* SettingsController */,
 				F70CE5FA1CAA64DF0086E6F6 /* StartControllerTableViewDelegate.swift */,
 				F70CE5FC1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift */,
 			);
@@ -188,6 +196,7 @@
 		F70CE5FE1CAA745C0086E6F6 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
+				F70CE6141CAAF83C0086E6F6 /* Bohr.framework */,
 				F70CE5FF1CAA746F0086E6F6 /* CleanroomASL.framework */,
 				F70CE6001CAA746F0086E6F6 /* CleanroomLogger.framework */,
 			);
@@ -209,6 +218,14 @@
 				F70CE60E1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib */,
 			);
 			path = Ui;
+			sourceTree = "<group>";
+		};
+		F70CE6171CAAF8C00086E6F6 /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE6181CAAF8C60086E6F6 /* SettingsController.swift */,
+			);
+			path = SettingsController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70CE6191CAAF8C60086E6F6 /* SettingsController.swift in Sources */,
 				F70CE5C71CAA5D880086E6F6 /* ViewController.swift in Sources */,
 				F70CE5C51CAA5D880086E6F6 /* AppDelegate.swift in Sources */,
 				F70CE5FB1CAA64DF0086E6F6 /* StartControllerTableViewDelegate.swift in Sources */,

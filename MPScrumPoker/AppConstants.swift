@@ -38,4 +38,12 @@ struct AppConstants {
             static let msg = NSLocalizedString("%@ wants to invite you.", comment: "")
         }
     }
+    
+    struct Settings {
+        
+        struct Advertising {
+            static let sectionTitle = NSLocalizedString("Advertising", comment: "")
+            static let description = NSLocalizedString("Device is visible", comment: "")
+        }
+    }
 }

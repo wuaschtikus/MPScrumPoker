@@ -34,8 +34,7 @@
                     <navigationItem key="navigationItem" id="dvC-Bk-Qj4">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="nhu-4b-gp6">
                             <connections>
-                                <action selector="startStopAdvertizing:" destination="BYZ-38-t0r" id="uJF-Gg-fDc"/>
-                                <segue destination="p1A-c8-t2A" kind="show" id="782-7q-hqf"/>
+                                <segue destination="PAe-fV-u8t" kind="show" id="JpS-bq-hgL"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -48,24 +47,33 @@
             </objects>
             <point key="canvasLocation" x="1056.5" y="307.5"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="2H5-B0-5Ib">
+        <!--Settings Controller-->
+        <scene sceneID="ive-h9-xFj">
             <objects>
-                <viewController id="p1A-c8-t2A" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ykl-zF-1VJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="k6q-Zf-KD5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hE1-yT-Xwe">
+                <tableViewController id="PAe-fV-u8t" customClass="SettingsController" customModule="MPScrumPoker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="SlN-b5-Ms1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4yl-9v-dKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2CT-7h-iHN">
+                                <rect key="frame" x="0.0" y="114" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2CT-7h-iHN" id="vEm-Qy-lda">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PAe-fV-u8t" id="6gh-aB-zbD"/>
+                            <outlet property="delegate" destination="PAe-fV-u8t" id="a6E-yz-IEa"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bkV-lY-1do" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583.5" y="306.5"/>
+            <point key="canvasLocation" x="1665.5" y="307.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TKN-Hb-xJX">
