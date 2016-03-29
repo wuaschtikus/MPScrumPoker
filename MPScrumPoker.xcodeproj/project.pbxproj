@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F70CE5C51CAA5D880086E6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5C41CAA5D880086E6F6 /* AppDelegate.swift */; };
+		F70CE5C71CAA5D880086E6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5C61CAA5D880086E6F6 /* ViewController.swift */; };
+		F70CE5CA1CAA5D880086E6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70CE5C81CAA5D880086E6F6 /* Main.storyboard */; };
+		F70CE5CC1CAA5D880086E6F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70CE5CB1CAA5D880086E6F6 /* Assets.xcassets */; };
+		F70CE5CF1CAA5D880086E6F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70CE5CD1CAA5D880086E6F6 /* LaunchScreen.storyboard */; };
+		F70CE5DA1CAA5D880086E6F6 /* MPScrumPokerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5D91CAA5D880086E6F6 /* MPScrumPokerTests.swift */; };
+		F70CE5E51CAA5D880086E6F6 /* MPScrumPokerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5E41CAA5D880086E6F6 /* MPScrumPokerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F70CE5D61CAA5D880086E6F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F70CE5B91CAA5D880086E6F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F70CE5C01CAA5D880086E6F6;
+			remoteInfo = MPScrumPoker;
+		};
+		F70CE5E11CAA5D880086E6F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F70CE5B91CAA5D880086E6F6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F70CE5C01CAA5D880086E6F6;
+			remoteInfo = MPScrumPoker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F70CE5C11CAA5D880086E6F6 /* MPScrumPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPScrumPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70CE5C41CAA5D880086E6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F70CE5C61CAA5D880086E6F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F70CE5C91CAA5D880086E6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F70CE5CB1CAA5D880086E6F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F70CE5CE1CAA5D880086E6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F70CE5D01CAA5D880086E6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F70CE5D51CAA5D880086E6F6 /* MPScrumPokerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPScrumPokerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70CE5D91CAA5D880086E6F6 /* MPScrumPokerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPScrumPokerTests.swift; sourceTree = "<group>"; };
+		F70CE5DB1CAA5D880086E6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F70CE5E01CAA5D880086E6F6 /* MPScrumPokerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MPScrumPokerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F70CE5E41CAA5D880086E6F6 /* MPScrumPokerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPScrumPokerUITests.swift; sourceTree = "<group>"; };
+		F70CE5E61CAA5D880086E6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F70CE5BE1CAA5D880086E6F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F70CE5D21CAA5D880086E6F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F70CE5DD1CAA5D880086E6F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F70CE5B81CAA5D880086E6F6 = {
+			isa = PBXGroup;
+			children = (
+				F70CE5C31CAA5D880086E6F6 /* MPScrumPoker */,
+				F70CE5D81CAA5D880086E6F6 /* MPScrumPokerTests */,
+				F70CE5E31CAA5D880086E6F6 /* MPScrumPokerUITests */,
+				F70CE5C21CAA5D880086E6F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F70CE5C21CAA5D880086E6F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE5C11CAA5D880086E6F6 /* MPScrumPoker.app */,
+				F70CE5D51CAA5D880086E6F6 /* MPScrumPokerTests.xctest */,
+				F70CE5E01CAA5D880086E6F6 /* MPScrumPokerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F70CE5C31CAA5D880086E6F6 /* MPScrumPoker */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE5C41CAA5D880086E6F6 /* AppDelegate.swift */,
+				F70CE5C61CAA5D880086E6F6 /* ViewController.swift */,
+				F70CE5C81CAA5D880086E6F6 /* Main.storyboard */,
+				F70CE5CB1CAA5D880086E6F6 /* Assets.xcassets */,
+				F70CE5CD1CAA5D880086E6F6 /* LaunchScreen.storyboard */,
+				F70CE5D01CAA5D880086E6F6 /* Info.plist */,
+			);
+			path = MPScrumPoker;
+			sourceTree = "<group>";
+		};
+		F70CE5D81CAA5D880086E6F6 /* MPScrumPokerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE5D91CAA5D880086E6F6 /* MPScrumPokerTests.swift */,
+				F70CE5DB1CAA5D880086E6F6 /* Info.plist */,
+			);
+			path = MPScrumPokerTests;
+			sourceTree = "<group>";
+		};
+		F70CE5E31CAA5D880086E6F6 /* MPScrumPokerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE5E41CAA5D880086E6F6 /* MPScrumPokerUITests.swift */,
+				F70CE5E61CAA5D880086E6F6 /* Info.plist */,
+			);
+			path = MPScrumPokerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F70CE5C01CAA5D880086E6F6 /* MPScrumPoker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F70CE5E91CAA5D880086E6F6 /* Build configuration list for PBXNativeTarget "MPScrumPoker" */;
+			buildPhases = (
+				F70CE5BD1CAA5D880086E6F6 /* Sources */,
+				F70CE5BE1CAA5D880086E6F6 /* Frameworks */,
+				F70CE5BF1CAA5D880086E6F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MPScrumPoker;
+			productName = MPScrumPoker;
+			productReference = F70CE5C11CAA5D880086E6F6 /* MPScrumPoker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F70CE5D41CAA5D880086E6F6 /* MPScrumPokerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F70CE5EC1CAA5D880086E6F6 /* Build configuration list for PBXNativeTarget "MPScrumPokerTests" */;
+			buildPhases = (
+				F70CE5D11CAA5D880086E6F6 /* Sources */,
+				F70CE5D21CAA5D880086E6F6 /* Frameworks */,
+				F70CE5D31CAA5D880086E6F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F70CE5D71CAA5D880086E6F6 /* PBXTargetDependency */,
+			);
+			name = MPScrumPokerTests;
+			productName = MPScrumPokerTests;
+			productReference = F70CE5D51CAA5D880086E6F6 /* MPScrumPokerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F70CE5DF1CAA5D880086E6F6 /* MPScrumPokerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F70CE5EF1CAA5D880086E6F6 /* Build configuration list for PBXNativeTarget "MPScrumPokerUITests" */;
+			buildPhases = (
+				F70CE5DC1CAA5D880086E6F6 /* Sources */,
+				F70CE5DD1CAA5D880086E6F6 /* Frameworks */,
+				F70CE5DE1CAA5D880086E6F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F70CE5E21CAA5D880086E6F6 /* PBXTargetDependency */,
+			);
+			name = MPScrumPokerUITests;
+			productName = MPScrumPokerUITests;
+			productReference = F70CE5E01CAA5D880086E6F6 /* MPScrumPokerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F70CE5B91CAA5D880086E6F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = midori;
+				TargetAttributes = {
+					F70CE5C01CAA5D880086E6F6 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					F70CE5D41CAA5D880086E6F6 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F70CE5C01CAA5D880086E6F6;
+					};
+					F70CE5DF1CAA5D880086E6F6 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = F70CE5C01CAA5D880086E6F6;
+					};
+				};
+			};
+			buildConfigurationList = F70CE5BC1CAA5D880086E6F6 /* Build configuration list for PBXProject "MPScrumPoker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F70CE5B81CAA5D880086E6F6;
+			productRefGroup = F70CE5C21CAA5D880086E6F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F70CE5C01CAA5D880086E6F6 /* MPScrumPoker */,
+				F70CE5D41CAA5D880086E6F6 /* MPScrumPokerTests */,
+				F70CE5DF1CAA5D880086E6F6 /* MPScrumPokerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F70CE5BF1CAA5D880086E6F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F70CE5CF1CAA5D880086E6F6 /* LaunchScreen.storyboard in Resources */,
+				F70CE5CC1CAA5D880086E6F6 /* Assets.xcassets in Resources */,
+				F70CE5CA1CAA5D880086E6F6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F70CE5D31CAA5D880086E6F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F70CE5DE1CAA5D880086E6F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F70CE5BD1CAA5D880086E6F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F70CE5C71CAA5D880086E6F6 /* ViewController.swift in Sources */,
+				F70CE5C51CAA5D880086E6F6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F70CE5D11CAA5D880086E6F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F70CE5DA1CAA5D880086E6F6 /* MPScrumPokerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F70CE5DC1CAA5D880086E6F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F70CE5E51CAA5D880086E6F6 /* MPScrumPokerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F70CE5D71CAA5D880086E6F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F70CE5C01CAA5D880086E6F6 /* MPScrumPoker */;
+			targetProxy = F70CE5D61CAA5D880086E6F6 /* PBXContainerItemProxy */;
+		};
+		F70CE5E21CAA5D880086E6F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F70CE5C01CAA5D880086E6F6 /* MPScrumPoker */;
+			targetProxy = F70CE5E11CAA5D880086E6F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F70CE5C81CAA5D880086E6F6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F70CE5C91CAA5D880086E6F6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F70CE5CD1CAA5D880086E6F6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F70CE5CE1CAA5D880086E6F6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F70CE5E71CAA5D880086E6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F70CE5E81CAA5D880086E6F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F70CE5EA1CAA5D880086E6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MPScrumPoker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midori.MPScrumPoker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F70CE5EB1CAA5D880086E6F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MPScrumPoker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midori.MPScrumPoker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F70CE5ED1CAA5D880086E6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MPScrumPokerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midori.MPScrumPokerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MPScrumPoker.app/MPScrumPoker";
+			};
+			name = Debug;
+		};
+		F70CE5EE1CAA5D880086E6F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MPScrumPokerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midori.MPScrumPokerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MPScrumPoker.app/MPScrumPoker";
+			};
+			name = Release;
+		};
+		F70CE5F01CAA5D880086E6F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MPScrumPokerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midori.MPScrumPokerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MPScrumPoker;
+			};
+			name = Debug;
+		};
+		F70CE5F11CAA5D880086E6F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MPScrumPokerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.midori.MPScrumPokerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MPScrumPoker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F70CE5BC1CAA5D880086E6F6 /* Build configuration list for PBXProject "MPScrumPoker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F70CE5E71CAA5D880086E6F6 /* Debug */,
+				F70CE5E81CAA5D880086E6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F70CE5E91CAA5D880086E6F6 /* Build configuration list for PBXNativeTarget "MPScrumPoker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F70CE5EA1CAA5D880086E6F6 /* Debug */,
+				F70CE5EB1CAA5D880086E6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F70CE5EC1CAA5D880086E6F6 /* Build configuration list for PBXNativeTarget "MPScrumPokerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F70CE5ED1CAA5D880086E6F6 /* Debug */,
+				F70CE5EE1CAA5D880086E6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F70CE5EF1CAA5D880086E6F6 /* Build configuration list for PBXNativeTarget "MPScrumPokerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F70CE5F01CAA5D880086E6F6 /* Debug */,
+				F70CE5F11CAA5D880086E6F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F70CE5B91CAA5D880086E6F6 /* Project object */;
+}
