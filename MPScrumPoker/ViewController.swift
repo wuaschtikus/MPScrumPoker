@@ -10,7 +10,7 @@ import UIKit
 import MultipeerConnectivity
 import CleanroomLogger
 
-class ViewController: UIViewController, MPCManagerDelegate {
+class ViewController: UIViewController {
     
     // MARK: - Outlets
     
@@ -22,7 +22,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
     
     let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
     
-    var isAdvertising: Bool!
+    
     var startTableViewDatasource:StartControllerTableViewDatasoure! {
         willSet {
             self.tableView.dataSource = newValue
@@ -41,12 +41,7 @@ class ViewController: UIViewController, MPCManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // setup multipeer
         
-        self.appDelegate.mpcManager.delegate = self
-        self.appDelegate.mpcManager.browser.startBrowsingForPeers()
-        self.appDelegate.mpcManager.advertiser.startAdvertisingPeer()
-        self.isAdvertising = true
         
         // setup tableview
         
@@ -65,70 +60,6 @@ class ViewController: UIViewController, MPCManagerDelegate {
         self.startTableViewDatasource = StartControllerTableViewDatasoure(startController: self)
     }
     
-    // MARK: - MCPManagerDelegate
     
-    func foundPeer(peerId:MCPeerID) {
-        Log.debug?.message("Found peer: \(peerId.displayName)")
-        self.tableView.reloadData()
-    }
-    
-    func lostPeer(peerId:MCPeerID) {
-        self.tableView.reloadData()
-    }
-    
-    func startStopAdvertising() {
-        
-        var title: String
-        var msg: String
-        if self.isAdvertising == true {
-            title = AppConstants.Alert.StopAdvertising.title
-            msg = AppConstants.Alert.StopAdvertising.msg
-        } else {
-            title = AppConstants.Alert.StartAdvertising.title
-            msg = AppConstants.Alert.StartAdvertising.msg
-        }
-        
-        let alert = UIAlertController(
-            title: title,
-            message: msg,
-            preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alert.addAction(
-            UIAlertAction(
-                title: AppConstants.Alert.NoButtonTitle,
-                style: UIAlertActionStyle.Default,
-                handler: nil))
-        
-        alert.addAction(
-            UIAlertAction(
-                title: AppConstants.Alert.OkButtonTitle,
-                style: UIAlertActionStyle.Default) {
-                (alertAction) -> Void in
-                
-                if self.isAdvertising == true {
-                    self.appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
-                }  else {
-                    self.appDelegate.mpcManager.advertiser.startAdvertisingPeer()
-                }
-                
-                self.isAdvertising = !self.isAdvertising
-                self.tableView.reloadData()
-            })
-        
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    func invitationWasReceived(fromPeer: MCPeerID) {
-        dispatch_async(dispatch_get_main_queue(),{
-            Log.debug?.message("Accepted Invite from peer: \(fromPeer.displayName)")
-            self.tableView.reloadData()
-        })
-    }
-    
-    func connectedWithPeer(peerID: MCPeerID) {
-        dispatch_async(dispatch_get_main_queue(),{
-            self.tableView.reloadData()
-        })
-    }
 }
 

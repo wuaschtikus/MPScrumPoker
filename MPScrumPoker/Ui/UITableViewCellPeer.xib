@@ -8,7 +8,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="f3Y-FR-Wcf">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UITableViewCellPeer" id="f3Y-FR-Wcf" customClass="UITableViewCellPeer" customModule="MPScrumPoker" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f3Y-FR-Wcf" id="uKC-Aq-KQK">
@@ -27,6 +27,9 @@
                     <constraint firstItem="Hq0-Y1-Ipf" firstAttribute="centerY" secondItem="uKC-Aq-KQK" secondAttribute="centerY" id="oYh-oA-3hw"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="peerNameLabel" destination="Hq0-Y1-Ipf" id="yew-UD-it6"/>
+            </connections>
             <point key="canvasLocation" x="245" y="269"/>
         </tableViewCell>
     </objects>

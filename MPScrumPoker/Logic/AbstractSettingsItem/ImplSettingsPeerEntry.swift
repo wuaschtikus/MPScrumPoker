@@ -7,10 +7,20 @@
 //
 
 import UIKit
+import MultipeerConnectivity
 
 class ImplSettingsPeerEntry : SettingsEntryProtocol {
     
-    func createCell(indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+    var peerId:MCPeerID!
+    
+    init(peerId:MCPeerID) {
+        self.peerId = peerId
+    }
+    
+    func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellPeer") as! UITableViewCellPeer
+        cell.peerNameLabel.text = self.peerId.displayName
+        
+        return cell
     }
 }

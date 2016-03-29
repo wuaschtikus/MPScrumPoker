@@ -10,7 +10,9 @@ import UIKit
 
 class ImplSettingsAdvertisingEntry : SettingsEntryProtocol {
     
-    func createCell(indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+    func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellAdvertising") as! UITableViewCellAdvertising
+        
+        return cell
     }
 }

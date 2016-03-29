@@ -14,19 +14,19 @@ enum SettingsEntry {
 }
 
 protocol SettingsEntryProtocol {
-    func createCell(indexPath:NSIndexPath) -> UITableViewCell
+    func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell
 }
 
 class SettingsEntryFactory {
-    class func factoryFor(settingsEntry:SettingsEntry) -> SettingsEntryProtocol {
-        
-        switch settingsEntry {
-            
-        case SettingsEntry.Advertising:
-            return ImplSettingsAdvertisingEntry()
-            
-        case SettingsEntry.Peer:
-            return ImplSettingsPeerEntry()
-        }
-    }
+//    class func factoryFor(settingsEntry:SettingsEntry) -> SettingsEntryProtocol {
+//        
+//        switch settingsEntry {
+//            
+//        case SettingsEntry.Advertising:
+//            return ImplSettingsAdvertisingEntry()
+//            
+//        case SettingsEntry.Peer:
+//            return ImplSettingsPeerEntry()
+//        }
+//    }
 }

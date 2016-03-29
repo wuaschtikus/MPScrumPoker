@@ -24,15 +24,8 @@ class StartControllerTableViewDelegate : NSObject, UITableViewDelegate {
     
     // MARK: - UITableViewDelegate
     
-//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        
-//        let selectedPeer = appDelegate.mpcManager.foundPeers[indexPath.row] as MCPeerID
-//        
-//        self.appDelegate.mpcManager.browser.invitePeer(selectedPeer, toSession: appDelegate.mpcManager.session, withContext: nil, timeout: 20)
-//    }
-    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if self.startController.isAdvertising == true {
+        if self.appDelegate.isAdvertising == true {
             let header = UIViewLoadingHeader.loadFromNibNamed("UIViewLoadingHeader") as! UIViewLoadingHeader
             header.activityIndicator.startAnimating()
             return header

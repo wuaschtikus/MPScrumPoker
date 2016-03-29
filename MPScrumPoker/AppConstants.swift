@@ -45,5 +45,10 @@ struct AppConstants {
             static let sectionTitle = NSLocalizedString("Advertising", comment: "")
             static let description = NSLocalizedString("Device is visible", comment: "")
         }
+        
+        struct Peers {
+            static let sectionTitle = NSLocalizedString("", comment: "")
+            static let descrption = NSLocalizedString("", comment: "")
+        }
     }
 }
