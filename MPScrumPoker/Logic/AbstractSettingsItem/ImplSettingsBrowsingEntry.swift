@@ -14,6 +14,7 @@ class ImplSettingsBrowsingEntry: SettingsEntryProtocol {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellAdvertising") as! UITableViewCellAdvertising
         cell.title.text = AppConstants.Settings.Browsing.description
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.shifter.prepare(AppConstants.UserDefaults.isBrowsingEnabled)
         return cell
     }
 }

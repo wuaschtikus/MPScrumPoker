@@ -18,6 +18,11 @@ struct AppConstants {
         static let invitationTimeout = Double(20)
     }
     
+    struct UserDefaults {
+        static let isAdvertisingEnabled = "isAdvertisingEnabled"
+        static let isBrowsingEnabled = "isBrowsingEnabled"
+    }
+    
     struct Alert {
         
         static let OkButtonTitle = NSLocalizedString("Ok", comment: "")

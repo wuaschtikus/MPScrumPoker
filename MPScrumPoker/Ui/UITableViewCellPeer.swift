@@ -9,7 +9,6 @@
 import UIKit
 
 class UITableViewCellPeer: UITableViewCell {
-    
 
     @IBOutlet weak var peerNameLabel: UILabel!
 

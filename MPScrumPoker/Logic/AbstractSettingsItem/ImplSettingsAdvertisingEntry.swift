@@ -13,6 +13,7 @@ class ImplSettingsAdvertisingEntry : SettingsEntryProtocol {
     func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellAdvertising") as! UITableViewCellAdvertising
         cell.selectionStyle = UITableViewCellSelectionStyle.None
+        cell.shifter.prepare(AppConstants.UserDefaults.isAdvertisingEnabled)
         return cell
     }
 }
