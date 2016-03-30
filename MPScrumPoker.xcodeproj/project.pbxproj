@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F70CE5C51CAA5D880086E6F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5C41CAA5D880086E6F6 /* AppDelegate.swift */; };
-		F70CE5C71CAA5D880086E6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5C61CAA5D880086E6F6 /* ViewController.swift */; };
 		F70CE5CA1CAA5D880086E6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70CE5C81CAA5D880086E6F6 /* Main.storyboard */; };
 		F70CE5CC1CAA5D880086E6F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70CE5CB1CAA5D880086E6F6 /* Assets.xcassets */; };
 		F70CE5CF1CAA5D880086E6F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70CE5CD1CAA5D880086E6F6 /* LaunchScreen.storyboard */; };
@@ -16,8 +15,6 @@
 		F70CE5E51CAA5D880086E6F6 /* MPScrumPokerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5E41CAA5D880086E6F6 /* MPScrumPokerUITests.swift */; };
 		F70CE5F61CAA5E180086E6F6 /* MPCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5F51CAA5E180086E6F6 /* MPCManager.swift */; };
 		F70CE5F81CAA5F4A0086E6F6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5F71CAA5F4A0086E6F6 /* AppConstants.swift */; };
-		F70CE5FB1CAA64DF0086E6F6 /* StartControllerTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5FA1CAA64DF0086E6F6 /* StartControllerTableViewDelegate.swift */; };
-		F70CE5FD1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE5FC1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift */; };
 		F70CE6011CAA746F0086E6F6 /* CleanroomASL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE5FF1CAA746F0086E6F6 /* CleanroomASL.framework */; };
 		F70CE6021CAA74700086E6F6 /* CleanroomLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE6001CAA746F0086E6F6 /* CleanroomLogger.framework */; };
 		F70CE6041CAA74850086E6F6 /* CleanroomASL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE5FF1CAA746F0086E6F6 /* CleanroomASL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -27,9 +24,6 @@
 		F70CE6131CAAE6340086E6F6 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6121CAAE6340086E6F6 /* UIViewExtension.swift */; };
 		F70CE6151CAAF83C0086E6F6 /* Bohr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE6141CAAF83C0086E6F6 /* Bohr.framework */; };
 		F70CE6161CAAF8750086E6F6 /* Bohr.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F70CE6141CAAF83C0086E6F6 /* Bohr.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F70CE6191CAAF8C60086E6F6 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6181CAAF8C60086E6F6 /* SettingsController.swift */; };
-		F70CE61B1CAAFE6D0086E6F6 /* SettingsTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE61A1CAAFE6D0086E6F6 /* SettingsTableViewDatasource.swift */; };
-		F70CE61D1CAAFE750086E6F6 /* SettingsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE61C1CAAFE750086E6F6 /* SettingsTableViewDelegate.swift */; };
 		F70CE6231CAAFF990086E6F6 /* AbstractSettingsEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6221CAAFF990086E6F6 /* AbstractSettingsEntry.swift */; };
 		F70CE6251CAB00510086E6F6 /* ImplSettingsAdvertisingEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6241CAB00510086E6F6 /* ImplSettingsAdvertisingEntry.swift */; };
 		F70CE6271CAB008D0086E6F6 /* ImplSettingsPeerEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6261CAB008D0086E6F6 /* ImplSettingsPeerEntry.swift */; };
@@ -41,6 +35,13 @@
 		F70CE6331CAC2A530086E6F6 /* UITableViewCellNoDevices.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70CE6321CAC2A530086E6F6 /* UITableViewCellNoDevices.xib */; };
 		F70CE6351CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6341CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift */; };
 		F70CE6371CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6361CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift */; };
+		F70CE63B1CAC403B0086E6F6 /* UICollectionViewCellCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE63A1CAC403B0086E6F6 /* UICollectionViewCellCard.swift */; };
+		F70CE6431CAC40D40086E6F6 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE63E1CAC40D40086E6F6 /* SettingsController.swift */; };
+		F70CE6441CAC40D40086E6F6 /* SettingsTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE63F1CAC40D40086E6F6 /* SettingsTableViewDatasource.swift */; };
+		F70CE6451CAC40D40086E6F6 /* SettingsTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6401CAC40D40086E6F6 /* SettingsTableViewDelegate.swift */; };
+		F70CE6461CAC40D40086E6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6421CAC40D40086E6F6 /* ViewController.swift */; };
+		F70CE6481CAC40F00086E6F6 /* StartControllerCollectionViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6471CAC40F00086E6F6 /* StartControllerCollectionViewDatasource.swift */; };
+		F70CE64C1CAC481D0086E6F6 /* StartCollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE64B1CAC481D0086E6F6 /* StartCollectionViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +80,6 @@
 /* Begin PBXFileReference section */
 		F70CE5C11CAA5D880086E6F6 /* MPScrumPoker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPScrumPoker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70CE5C41CAA5D880086E6F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F70CE5C61CAA5D880086E6F6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F70CE5C91CAA5D880086E6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F70CE5CB1CAA5D880086E6F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F70CE5CE1CAA5D880086E6F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -92,17 +92,12 @@
 		F70CE5E61CAA5D880086E6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F70CE5F51CAA5E180086E6F6 /* MPCManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPCManager.swift; sourceTree = "<group>"; };
 		F70CE5F71CAA5F4A0086E6F6 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
-		F70CE5FA1CAA64DF0086E6F6 /* StartControllerTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartControllerTableViewDelegate.swift; sourceTree = "<group>"; };
-		F70CE5FC1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartControllerTableViewDatasource.swift; sourceTree = "<group>"; };
 		F70CE5FF1CAA746F0086E6F6 /* CleanroomASL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleanroomASL.framework; path = Carthage/Build/iOS/CleanroomASL.framework; sourceTree = SOURCE_ROOT; };
 		F70CE6001CAA746F0086E6F6 /* CleanroomLogger.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CleanroomLogger.framework; path = Carthage/Build/iOS/CleanroomLogger.framework; sourceTree = SOURCE_ROOT; };
 		F70CE60C1CAAE5230086E6F6 /* UIViewLoadingHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewLoadingHeader.swift; sourceTree = "<group>"; };
 		F70CE60E1CAAE54C0086E6F6 /* UIViewLoadingHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UIViewLoadingHeader.xib; sourceTree = "<group>"; };
 		F70CE6121CAAE6340086E6F6 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F70CE6141CAAF83C0086E6F6 /* Bohr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bohr.framework; path = Carthage/Build/iOS/Bohr.framework; sourceTree = SOURCE_ROOT; };
-		F70CE6181CAAF8C60086E6F6 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
-		F70CE61A1CAAFE6D0086E6F6 /* SettingsTableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDatasource.swift; sourceTree = "<group>"; };
-		F70CE61C1CAAFE750086E6F6 /* SettingsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDelegate.swift; sourceTree = "<group>"; };
 		F70CE6221CAAFF990086E6F6 /* AbstractSettingsEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractSettingsEntry.swift; sourceTree = "<group>"; };
 		F70CE6241CAB00510086E6F6 /* ImplSettingsAdvertisingEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImplSettingsAdvertisingEntry.swift; sourceTree = "<group>"; };
 		F70CE6261CAB008D0086E6F6 /* ImplSettingsPeerEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImplSettingsPeerEntry.swift; sourceTree = "<group>"; };
@@ -114,6 +109,13 @@
 		F70CE6321CAC2A530086E6F6 /* UITableViewCellNoDevices.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITableViewCellNoDevices.xib; sourceTree = "<group>"; };
 		F70CE6341CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImplSettingsEntryNoDevices.swift; sourceTree = "<group>"; };
 		F70CE6361CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImplSettingsBrowsingEntry.swift; sourceTree = "<group>"; };
+		F70CE63A1CAC403B0086E6F6 /* UICollectionViewCellCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellCard.swift; sourceTree = "<group>"; };
+		F70CE63E1CAC40D40086E6F6 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		F70CE63F1CAC40D40086E6F6 /* SettingsTableViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDatasource.swift; sourceTree = "<group>"; };
+		F70CE6401CAC40D40086E6F6 /* SettingsTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewDelegate.swift; sourceTree = "<group>"; };
+		F70CE6421CAC40D40086E6F6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F70CE6471CAC40F00086E6F6 /* StartControllerCollectionViewDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartControllerCollectionViewDatasource.swift; sourceTree = "<group>"; };
+		F70CE64B1CAC481D0086E6F6 /* StartCollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCollectionViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,15 +171,14 @@
 			children = (
 				F70CE5C41CAA5D880086E6F6 /* AppDelegate.swift */,
 				F70CE5F71CAA5F4A0086E6F6 /* AppConstants.swift */,
-				F70CE5C61CAA5D880086E6F6 /* ViewController.swift */,
 				F70CE5C81CAA5D880086E6F6 /* Main.storyboard */,
 				F70CE5CB1CAA5D880086E6F6 /* Assets.xcassets */,
 				F70CE5CD1CAA5D880086E6F6 /* LaunchScreen.storyboard */,
 				F70CE5D01CAA5D880086E6F6 /* Info.plist */,
+				F70CE63C1CAC40D40086E6F6 /* Controller */,
 				F70CE60B1CAAE50F0086E6F6 /* Ui */,
 				F70CE6081CAADFD10086E6F6 /* Extensions */,
 				F70CE5FE1CAA745C0086E6F6 /* Carthage */,
-				F70CE5F91CAA64D50086E6F6 /* Conttroller */,
 				F70CE61E1CAAFF5A0086E6F6 /* Logic */,
 				F70CE5F41CAA5E100086E6F6 /* Multipeer */,
 			);
@@ -210,16 +211,6 @@
 			path = Multipeer;
 			sourceTree = "<group>";
 		};
-		F70CE5F91CAA64D50086E6F6 /* Conttroller */ = {
-			isa = PBXGroup;
-			children = (
-				F70CE6171CAAF8C00086E6F6 /* SettingsController */,
-				F70CE5FA1CAA64DF0086E6F6 /* StartControllerTableViewDelegate.swift */,
-				F70CE5FC1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift */,
-			);
-			path = Conttroller;
-			sourceTree = "<group>";
-		};
 		F70CE5FE1CAA745C0086E6F6 /* Carthage */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,18 +240,9 @@
 				F70CE62C1CAB012C0086E6F6 /* UITableViewCellPeer.xib */,
 				F70CE6301CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift */,
 				F70CE6321CAC2A530086E6F6 /* UITableViewCellNoDevices.xib */,
+				F70CE63A1CAC403B0086E6F6 /* UICollectionViewCellCard.swift */,
 			);
 			path = Ui;
-			sourceTree = "<group>";
-		};
-		F70CE6171CAAF8C00086E6F6 /* SettingsController */ = {
-			isa = PBXGroup;
-			children = (
-				F70CE6181CAAF8C60086E6F6 /* SettingsController.swift */,
-				F70CE61A1CAAFE6D0086E6F6 /* SettingsTableViewDatasource.swift */,
-				F70CE61C1CAAFE750086E6F6 /* SettingsTableViewDelegate.swift */,
-			);
-			path = SettingsController;
 			sourceTree = "<group>";
 		};
 		F70CE61E1CAAFF5A0086E6F6 /* Logic */ = {
@@ -281,6 +263,35 @@
 				F70CE6361CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift */,
 			);
 			path = AbstractSettingsItem;
+			sourceTree = "<group>";
+		};
+		F70CE63C1CAC40D40086E6F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE63D1CAC40D40086E6F6 /* SettingsController */,
+				F70CE6411CAC40D40086E6F6 /* StartController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F70CE63D1CAC40D40086E6F6 /* SettingsController */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE63E1CAC40D40086E6F6 /* SettingsController.swift */,
+				F70CE63F1CAC40D40086E6F6 /* SettingsTableViewDatasource.swift */,
+				F70CE6401CAC40D40086E6F6 /* SettingsTableViewDelegate.swift */,
+			);
+			path = SettingsController;
+			sourceTree = "<group>";
+		};
+		F70CE6411CAC40D40086E6F6 /* StartController */ = {
+			isa = PBXGroup;
+			children = (
+				F70CE6421CAC40D40086E6F6 /* ViewController.swift */,
+				F70CE6471CAC40F00086E6F6 /* StartControllerCollectionViewDatasource.swift */,
+				F70CE64B1CAC481D0086E6F6 /* StartCollectionViewDelegate.swift */,
+			);
+			path = StartController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,21 +431,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70CE6351CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift in Sources */,
-				F70CE6191CAAF8C60086E6F6 /* SettingsController.swift in Sources */,
+				F70CE6441CAC40D40086E6F6 /* SettingsTableViewDatasource.swift in Sources */,
 				F70CE62F1CAB013B0086E6F6 /* UITableViewCellPeer.swift in Sources */,
-				F70CE5C71CAA5D880086E6F6 /* ViewController.swift in Sources */,
+				F70CE6481CAC40F00086E6F6 /* StartControllerCollectionViewDatasource.swift in Sources */,
 				F70CE6291CAB00DA0086E6F6 /* UITableViewCellAdvertising.swift in Sources */,
 				F70CE5C51CAA5D880086E6F6 /* AppDelegate.swift in Sources */,
-				F70CE61D1CAAFE750086E6F6 /* SettingsTableViewDelegate.swift in Sources */,
-				F70CE61B1CAAFE6D0086E6F6 /* SettingsTableViewDatasource.swift in Sources */,
-				F70CE5FB1CAA64DF0086E6F6 /* StartControllerTableViewDelegate.swift in Sources */,
 				F70CE5F61CAA5E180086E6F6 /* MPCManager.swift in Sources */,
+				F70CE6451CAC40D40086E6F6 /* SettingsTableViewDelegate.swift in Sources */,
 				F70CE60D1CAAE5230086E6F6 /* UIViewLoadingHeader.swift in Sources */,
+				F70CE6431CAC40D40086E6F6 /* SettingsController.swift in Sources */,
 				F70CE5F81CAA5F4A0086E6F6 /* AppConstants.swift in Sources */,
+				F70CE64C1CAC481D0086E6F6 /* StartCollectionViewDelegate.swift in Sources */,
+				F70CE63B1CAC403B0086E6F6 /* UICollectionViewCellCard.swift in Sources */,
 				F70CE6371CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift in Sources */,
+				F70CE6461CAC40D40086E6F6 /* ViewController.swift in Sources */,
 				F70CE6231CAAFF990086E6F6 /* AbstractSettingsEntry.swift in Sources */,
 				F70CE6131CAAE6340086E6F6 /* UIViewExtension.swift in Sources */,
-				F70CE5FD1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift in Sources */,
 				F70CE6251CAB00510086E6F6 /* ImplSettingsAdvertisingEntry.swift in Sources */,
 				F70CE6311CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift in Sources */,
 				F70CE6271CAB008D0086E6F6 /* ImplSettingsPeerEntry.swift in Sources */,

@@ -3,13 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="psl-5f-AKL">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jNW-JI-38j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="gE1-Ek-aW2" sceneMemberID="viewController">
+                <viewController id="gE1-Ek-aW2" customClass="ViewController" customModule="MPScrumPoker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Q46-W3-wC3"/>
                         <viewControllerLayoutGuide type="bottom" id="gOI-QO-p4M"/>
@@ -17,7 +18,37 @@
                     <view key="view" contentMode="scaleToFill" id="m9O-g3-sfa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JrP-KC-Uxb">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ptz-bY-KVx">
+                                    <size key="itemSize" width="79" height="79"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="8Vw-Bp-r7F" customClass="UICollectionViewCellCard" customModule="MPScrumPoker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="64" width="79" height="79"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gOI-QO-p4M" firstAttribute="top" secondItem="JrP-KC-Uxb" secondAttribute="bottom" id="IxP-kb-NQJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JrP-KC-Uxb" secondAttribute="trailing" constant="-20" id="NqF-2Y-FZ7"/>
+                            <constraint firstItem="JrP-KC-Uxb" firstAttribute="leading" secondItem="m9O-g3-sfa" secondAttribute="leadingMargin" constant="-20" id="S6b-JZ-ICo"/>
+                            <constraint firstItem="JrP-KC-Uxb" firstAttribute="top" secondItem="Q46-W3-wC3" secondAttribute="bottom" constant="-64" id="Vry-fv-yWy"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="CVx-kf-R74">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="wHZ-Ka-x0L">
@@ -27,6 +58,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collectionView" destination="JrP-KC-Uxb" id="PG1-3v-yeA"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="525.5" y="307.5"/>

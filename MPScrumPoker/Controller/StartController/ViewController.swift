@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     // MARK: - Outlets
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func startStopAdvertizing(sender: AnyObject) {
     }
     
@@ -22,16 +22,16 @@ class ViewController: UIViewController {
     
     let appDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
     
-    
-    var startTableViewDatasource:StartControllerTableViewDatasoure! {
+    var startCollectionViewDatasource:StartControllerCollectionViewDatasource! {
         willSet {
-            self.tableView.dataSource = newValue
-            self.tableView.reloadData()
+            self.collectionView.dataSource = newValue
+            self.collectionView.reloadData()
         }
     }
-    var startTableViewDelegate:StartControllerTableViewDelegate! {
+    
+    var startCollectionViewDelegate:StartCollectionViewDelegate! {
         willSet {
-            self.tableView.delegate = newValue
+            self.collectionView.delegate = newValue
         }
     }
     
@@ -42,7 +42,13 @@ class ViewController: UIViewController {
         
         // setup tableview
         
-        self.prepareTableView()
+        self.prepareCollectionView()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        self.collectionView.collectionViewLayout.invalidateLayout()
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,9 +58,9 @@ class ViewController: UIViewController {
     
     // MARK: - Private
     
-    func prepareTableView() {
-        self.startTableViewDelegate = StartControllerTableViewDelegate(startController: self)
-        self.startTableViewDatasource = StartControllerTableViewDatasoure(startController: self)
+    func prepareCollectionView() {
+        self.startCollectionViewDelegate = StartCollectionViewDelegate(startController: self)
+        self.startCollectionViewDatasource = StartControllerCollectionViewDatasource(startController: self)
     }
 }
 
