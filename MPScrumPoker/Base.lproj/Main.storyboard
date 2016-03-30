@@ -35,9 +35,32 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHN-5m-mR2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="79" height="79"/>
+                                                    <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX4-eN-7cl">
+                                                    <rect key="frame" x="26" y="10" width="28" height="60"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="rHN-5m-mR2" firstAttribute="top" secondItem="8Vw-Bp-r7F" secondAttribute="topMargin" constant="-8" id="Psv-fH-G38"/>
+                                            <constraint firstItem="AX4-eN-7cl" firstAttribute="centerY" secondItem="8Vw-Bp-r7F" secondAttribute="centerY" id="bSI-VI-x3W"/>
+                                            <constraint firstItem="AX4-eN-7cl" firstAttribute="centerX" secondItem="8Vw-Bp-r7F" secondAttribute="centerX" id="d1j-om-dfo"/>
+                                            <constraint firstItem="rHN-5m-mR2" firstAttribute="leading" secondItem="8Vw-Bp-r7F" secondAttribute="leadingMargin" constant="-8" id="h9g-AM-3oi"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="rHN-5m-mR2" secondAttribute="bottom" constant="-8" id="lHY-X7-KLM"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="rHN-5m-mR2" secondAttribute="trailing" constant="-8" id="uKs-Ox-dOT"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="roundCornersView" destination="rHN-5m-mR2" id="SoC-9a-1Y1"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
