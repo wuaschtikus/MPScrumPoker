@@ -12,13 +12,13 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DISCOVERING NEARBY DEVICES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBX-Ql-r8Z">
-                    <rect key="frame" x="17" y="10" width="187" height="15"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <rect key="frame" x="17" y="12" width="159" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="k8H-vF-vXD">
-                    <rect key="frame" x="212" y="8" width="20" height="20"/>
+                    <rect key="frame" x="184" y="8" width="20" height="20"/>
                 </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

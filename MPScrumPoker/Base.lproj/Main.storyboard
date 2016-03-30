@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="525.5" y="307.5"/>
         </scene>
-        <!--Settings Controller-->
+        <!--Settings-->
         <scene sceneID="ive-h9-xFj">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bkV-lY-1do" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -55,6 +55,7 @@
                             <outlet property="delegate" destination="PAe-fV-u8t" id="a6E-yz-IEa"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="n5K-d4-Wfo"/>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1105.5" y="307.5"/>

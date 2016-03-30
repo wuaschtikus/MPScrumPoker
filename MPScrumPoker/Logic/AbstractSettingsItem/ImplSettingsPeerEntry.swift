@@ -20,7 +20,7 @@ class ImplSettingsPeerEntry : SettingsEntryProtocol {
     func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellPeer") as! UITableViewCellPeer
         cell.peerNameLabel.text = self.peerId.displayName
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell
     }
 }

@@ -39,6 +39,8 @@
 		F70CE62F1CAB013B0086E6F6 /* UITableViewCellPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE62E1CAB013B0086E6F6 /* UITableViewCellPeer.swift */; };
 		F70CE6311CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6301CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift */; };
 		F70CE6331CAC2A530086E6F6 /* UITableViewCellNoDevices.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70CE6321CAC2A530086E6F6 /* UITableViewCellNoDevices.xib */; };
+		F70CE6351CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6341CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift */; };
+		F70CE6371CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6361CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		F70CE62E1CAB013B0086E6F6 /* UITableViewCellPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellPeer.swift; sourceTree = "<group>"; };
 		F70CE6301CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellNoDevices.swift; sourceTree = "<group>"; };
 		F70CE6321CAC2A530086E6F6 /* UITableViewCellNoDevices.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITableViewCellNoDevices.xib; sourceTree = "<group>"; };
+		F70CE6341CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImplSettingsEntryNoDevices.swift; sourceTree = "<group>"; };
+		F70CE6361CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImplSettingsBrowsingEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -273,6 +277,8 @@
 				F70CE6221CAAFF990086E6F6 /* AbstractSettingsEntry.swift */,
 				F70CE6241CAB00510086E6F6 /* ImplSettingsAdvertisingEntry.swift */,
 				F70CE6261CAB008D0086E6F6 /* ImplSettingsPeerEntry.swift */,
+				F70CE6341CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift */,
+				F70CE6361CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift */,
 			);
 			path = AbstractSettingsItem;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F70CE6351CAC2B9B0086E6F6 /* ImplSettingsEntryNoDevices.swift in Sources */,
 				F70CE6191CAAF8C60086E6F6 /* SettingsController.swift in Sources */,
 				F70CE62F1CAB013B0086E6F6 /* UITableViewCellPeer.swift in Sources */,
 				F70CE5C71CAA5D880086E6F6 /* ViewController.swift in Sources */,
@@ -424,6 +431,7 @@
 				F70CE5F61CAA5E180086E6F6 /* MPCManager.swift in Sources */,
 				F70CE60D1CAAE5230086E6F6 /* UIViewLoadingHeader.swift in Sources */,
 				F70CE5F81CAA5F4A0086E6F6 /* AppConstants.swift in Sources */,
+				F70CE6371CAC2CE10086E6F6 /* ImplSettingsBrowsingEntry.swift in Sources */,
 				F70CE6231CAAFF990086E6F6 /* AbstractSettingsEntry.swift in Sources */,
 				F70CE6131CAAE6340086E6F6 /* UIViewExtension.swift in Sources */,
 				F70CE5FD1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift in Sources */,

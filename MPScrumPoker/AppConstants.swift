@@ -42,12 +42,16 @@ struct AppConstants {
     struct Settings {
         
         struct Advertising {
-            static let sectionTitle = NSLocalizedString("Advertising", comment: "")
+            static let sectionTitle = NSLocalizedString("Advertising & Browsing", comment: "")
             static let description = NSLocalizedString("Device is visible", comment: "")
         }
         
+        struct Browsing {
+            static let description = NSLocalizedString("Discovering nearby Devices", comment: "")
+        }
+        
         struct Peers {
-            static let sectionTitle = NSLocalizedString("", comment: "")
+            static let sectionTitle = NSLocalizedString("Peers", comment: "")
             static let descrption = NSLocalizedString("", comment: "")
         }
     }

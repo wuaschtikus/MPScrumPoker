@@ -35,12 +35,17 @@ class SettingsTableViewDatasource: NSObject, UITableViewDataSource {
         var datasourceTmp:[[SettingsEntryProtocol]] = []
         
         section1.append(ImplSettingsAdvertisingEntry())
+        section1.append(ImplSettingsBrowsingEntry())
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let peers = appDelegate.mpcManager.foundPeers
         
         for peer in peers {
             section2.append(ImplSettingsPeerEntry(peerId: peer))
+        }
+        
+        if section2.count == 0 {
+            section2.append(ImplSettingsNoDevices())
         }
         
         datasourceTmp.append(section1)
@@ -50,6 +55,10 @@ class SettingsTableViewDatasource: NSObject, UITableViewDataSource {
     }
     
     // MARK: - UITableViewDataSource
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.sections[section]
+    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return self.sections.count

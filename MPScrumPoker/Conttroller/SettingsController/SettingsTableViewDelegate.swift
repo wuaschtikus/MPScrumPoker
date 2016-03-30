@@ -21,7 +21,7 @@ class SettingsTableViewDelegate : NSObject, UITableViewDelegate {
         self.settingsController = settingsController
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         if section == 1 {
             let headerView = UIView.loadFromNibNamed("UIViewLoadingHeader") as! UIViewLoadingHeader
             headerView.activityIndicator.startAnimating()
@@ -31,7 +31,7 @@ class SettingsTableViewDelegate : NSObject, UITableViewDelegate {
         }
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 35
     }
 }

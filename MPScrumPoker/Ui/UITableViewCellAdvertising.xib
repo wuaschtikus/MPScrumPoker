@@ -32,6 +32,10 @@
                     <constraint firstItem="Smx-vZ-VEf" firstAttribute="leading" secondItem="9xL-je-bAQ" secondAttribute="leadingMargin" constant="10" id="U0d-7k-AV8"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="shifter" destination="Zsn-fV-EWs" id="fZk-b8-sPd"/>
+                <outlet property="title" destination="Smx-vZ-VEf" id="fHL-AU-8J5"/>
+            </connections>
             <point key="canvasLocation" x="160" y="302"/>
         </tableViewCell>
     </objects>
