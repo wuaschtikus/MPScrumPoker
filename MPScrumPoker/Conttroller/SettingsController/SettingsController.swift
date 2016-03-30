@@ -81,17 +81,17 @@ class SettingsController : UITableViewController {
     
     func toggleBrowsing(sender:UISwitch) {
         
-        let isBrowsingOn = NSUserDefaults.standardUserDefaults().boolForKey(AppConstants.UserDefaults.isBrowsingEnabled)
-        
         NSUserDefaults.standardUserDefaults().setBool(
             sender.on,
             forKey: AppConstants.UserDefaults.isBrowsingEnabled)
         NSUserDefaults.standardUserDefaults().synchronize()
         
-        if isBrowsingOn {
+        if !sender.on {
             self.appDelegate.mpcManager.browser.stopBrowsingForPeers()
+            Log.debug?.message("Stopped Browsing for Peers")
         } else {
             self.appDelegate.mpcManager.browser.startBrowsingForPeers()
+            Log.debug?.message("Started Browsing for Peers")
         }
         
         self.tableView.reloadSections(
@@ -101,22 +101,17 @@ class SettingsController : UITableViewController {
     
     func toggleAdvertising(sender:UISwitch) {
         
-        let isAdvertisingOn = NSUserDefaults.standardUserDefaults().boolForKey(AppConstants.UserDefaults.isAdvertisingEnabled)
-        
         NSUserDefaults.standardUserDefaults().setBool(
             sender.on,
             forKey: AppConstants.UserDefaults.isAdvertisingEnabled)
         NSUserDefaults.standardUserDefaults().synchronize()
         
-        if isAdvertisingOn {
+        if !sender.on {
             self.appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
+            Log.debug?.message("Stopped Advertising")
         } else {
             self.appDelegate.mpcManager.advertiser.startAdvertisingPeer()
+            Log.debug?.message("Started Advertising")
         }
-    }
-    
-    func disableAdvertising() {
-        self.appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
-        self.appDelegate.isAdvertising = false
     }
 }
