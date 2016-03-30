@@ -37,6 +37,8 @@
 		F70CE62B1CAB00E90086E6F6 /* UITableViewCellAdvertising.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70CE62A1CAB00E90086E6F6 /* UITableViewCellAdvertising.xib */; };
 		F70CE62D1CAB012C0086E6F6 /* UITableViewCellPeer.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70CE62C1CAB012C0086E6F6 /* UITableViewCellPeer.xib */; };
 		F70CE62F1CAB013B0086E6F6 /* UITableViewCellPeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE62E1CAB013B0086E6F6 /* UITableViewCellPeer.swift */; };
+		F70CE6311CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70CE6301CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift */; };
+		F70CE6331CAC2A530086E6F6 /* UITableViewCellNoDevices.xib in Resources */ = {isa = PBXBuildFile; fileRef = F70CE6321CAC2A530086E6F6 /* UITableViewCellNoDevices.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +108,8 @@
 		F70CE62A1CAB00E90086E6F6 /* UITableViewCellAdvertising.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITableViewCellAdvertising.xib; sourceTree = "<group>"; };
 		F70CE62C1CAB012C0086E6F6 /* UITableViewCellPeer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITableViewCellPeer.xib; sourceTree = "<group>"; };
 		F70CE62E1CAB013B0086E6F6 /* UITableViewCellPeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellPeer.swift; sourceTree = "<group>"; };
+		F70CE6301CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellNoDevices.swift; sourceTree = "<group>"; };
+		F70CE6321CAC2A530086E6F6 /* UITableViewCellNoDevices.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UITableViewCellNoDevices.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,8 @@
 				F70CE62A1CAB00E90086E6F6 /* UITableViewCellAdvertising.xib */,
 				F70CE62E1CAB013B0086E6F6 /* UITableViewCellPeer.swift */,
 				F70CE62C1CAB012C0086E6F6 /* UITableViewCellPeer.xib */,
+				F70CE6301CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift */,
+				F70CE6321CAC2A530086E6F6 /* UITableViewCellNoDevices.xib */,
 			);
 			path = Ui;
 			sourceTree = "<group>";
@@ -382,6 +388,7 @@
 				F70CE62B1CAB00E90086E6F6 /* UITableViewCellAdvertising.xib in Resources */,
 				F70CE5CC1CAA5D880086E6F6 /* Assets.xcassets in Resources */,
 				F70CE5CA1CAA5D880086E6F6 /* Main.storyboard in Resources */,
+				F70CE6331CAC2A530086E6F6 /* UITableViewCellNoDevices.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -421,6 +428,7 @@
 				F70CE6131CAAE6340086E6F6 /* UIViewExtension.swift in Sources */,
 				F70CE5FD1CAA650E0086E6F6 /* StartControllerTableViewDatasource.swift in Sources */,
 				F70CE6251CAB00510086E6F6 /* ImplSettingsAdvertisingEntry.swift in Sources */,
+				F70CE6311CAC2A1D0086E6F6 /* UITableViewCellNoDevices.swift in Sources */,
 				F70CE6271CAB008D0086E6F6 /* ImplSettingsPeerEntry.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

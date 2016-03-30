@@ -52,14 +52,19 @@ class SettingsController : UITableViewController {
     }
     
     private func prepareTableView() {
-        self.tableView.registerNib(UINib(nibName: "UITableViewCellAdvertising",
-            bundle: NSBundle(forClass: self.dynamicType)),
-                                   forCellReuseIdentifier: "UITableViewCellAdvertising")
-        self.tableView.registerNib(UINib(nibName: "UITableViewCellPeer",
-            bundle: NSBundle(forClass: self.dynamicType)),
-                                   forCellReuseIdentifier: "UITableViewCellPeer")
+        let bundle = NSBundle(forClass: self.dynamicType)
+
+        self.tableView.registerNib(
+            UINib(nibName: "UITableViewCellAdvertising", bundle: bundle),
+            forCellReuseIdentifier: "UITableViewCellAdvertising")
         
+        self.tableView.registerNib(
+            UINib(nibName: "UITableViewCellPeer", bundle: bundle),
+            forCellReuseIdentifier: "UITableViewCellPeer")
         
+        self.tableView.registerNib(
+            UINib(nibName: "UITableViewCellNoDevices", bundle: bundle),
+            forCellReuseIdentifier: "UITableViewCellNoDevices")
         
         self.settingsTableViewDelegate = SettingsTableViewDelegate(settingsController: self)
         self.settingsTableViewDatasource = SettingsTableViewDatasource(settingsController: self)
@@ -72,7 +77,7 @@ class SettingsController : UITableViewController {
         )
     }
     
-    // MARK: - Public 
+    // MARK: - Public
     
     func reloadTableView() {
         self.settingsTableViewDatasource = SettingsTableViewDatasource(settingsController: self)
