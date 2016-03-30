@@ -11,7 +11,7 @@ import UIKit
 class UITableViewCellAdvertising : UITableViewCell {
     
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var shifter: UISwitchUserDefaults!
+    @IBOutlet weak var shifter: UISwitch!
     
     override func awakeFromNib() {
         super.awakeFromNib()

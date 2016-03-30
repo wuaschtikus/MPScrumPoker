@@ -10,10 +10,14 @@ import UIKit
 
 class ImplSettingsAdvertisingEntry : SettingsEntryProtocol {
     
-    func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    func createCell(settingsController:SettingsController, tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellAdvertising") as! UITableViewCellAdvertising
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.shifter.prepare(AppConstants.UserDefaults.isAdvertisingEnabled)
+        cell.shifter.removeTarget(settingsController, action: nil, forControlEvents: UIControlEvents.AllEvents)
+        cell.shifter.addTarget(settingsController, action: #selector(SettingsController.toggleAdvertising(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        cell.shifter.on = userDefaults.boolForKey(AppConstants.UserDefaults.isBrowsingEnabled)
         return cell
     }
 }

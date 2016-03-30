@@ -12,7 +12,7 @@ class SettingsTableViewDatasource: NSObject, UITableViewDataSource {
     
     // MARK: - Properties
     
-    var settingsController:SettingsController?
+    var settingsController:SettingsController!
     
     var rows:[[SettingsEntryProtocol]]!
     var sections:[String] = [
@@ -70,7 +70,9 @@ class SettingsTableViewDatasource: NSObject, UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let row = self.rows[indexPath.section][indexPath.row]
-        let cell = row.createCell(tableView, indexPath: indexPath)
+        let cell = row.createCell(self.settingsController,
+                                  tableView: tableView,
+                                  indexPath: indexPath)
         
         return cell
     }

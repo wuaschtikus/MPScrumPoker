@@ -13,7 +13,7 @@ import MultipeerConnectivity
 
 class ImplSettingsNoDevices : SettingsEntryProtocol {
     
-    func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+    func createCell(settingsController:SettingsController, tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellNoDevices") as! UITableViewCellNoDevices
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         return cell

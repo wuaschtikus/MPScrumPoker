@@ -10,11 +10,14 @@ import UIKit
 
 class ImplSettingsBrowsingEntry: SettingsEntryProtocol {
     
-    func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
+    func createCell(settingsController:SettingsController, tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UITableViewCellAdvertising") as! UITableViewCellAdvertising
         cell.title.text = AppConstants.Settings.Browsing.description
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.shifter.prepare(AppConstants.UserDefaults.isBrowsingEnabled)
+        cell.shifter.addTarget(settingsController, action: #selector(SettingsController.toggleBrowsing(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        cell.shifter.on = userDefaults.boolForKey(AppConstants.UserDefaults.isBrowsingEnabled)
         return cell
     }
 }

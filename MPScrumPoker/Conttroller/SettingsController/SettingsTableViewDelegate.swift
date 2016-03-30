@@ -13,6 +13,7 @@ class SettingsTableViewDelegate : NSObject, UITableViewDelegate {
     // MARK: - Properties
     
     var settingsController:SettingsController?
+    let userDefaults:NSUserDefaults = NSUserDefaults.standardUserDefaults()
     
     // MARK: - Initializer
     
@@ -22,7 +23,7 @@ class SettingsTableViewDelegate : NSObject, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == 1 {
+        if section == 1 && self.userDefaults.boolForKey(AppConstants.UserDefaults.isBrowsingEnabled) == true {
             let headerView = UIView.loadFromNibNamed("UIViewLoadingHeader") as! UIViewLoadingHeader
             headerView.activityIndicator.startAnimating()
             return headerView
@@ -32,6 +33,10 @@ class SettingsTableViewDelegate : NSObject, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 35
+        if self.userDefaults.boolForKey(AppConstants.UserDefaults.isBrowsingEnabled) == true {
+            return 35
+        } else {
+            return 0
+        }
     }
 }

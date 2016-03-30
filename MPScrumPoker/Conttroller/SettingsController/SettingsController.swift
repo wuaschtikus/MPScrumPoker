@@ -6,8 +6,8 @@
 //  Copyright © 2016 midori. All rights reserved.
 //
 
-import Foundation
-import Bohr
+import UIKit
+import CleanroomLogger
 
 class SettingsController : UITableViewController {
     
@@ -17,7 +17,9 @@ class SettingsController : UITableViewController {
         case ReloadTableView = "SettingsController.ReloadTableView"
     }
     
-    // MARK: - Prtoperties
+    // MARK: - Properties
+    
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var settingsTableViewDatasource: SettingsTableViewDatasource? {
         willSet {
@@ -44,6 +46,7 @@ class SettingsController : UITableViewController {
     // MARK: - Private
     
     private func prepareObserver() {
+        
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: #selector(SettingsController.reloadTableView),
@@ -70,16 +73,50 @@ class SettingsController : UITableViewController {
         self.settingsTableViewDatasource = SettingsTableViewDatasource(settingsController: self)
     }
     
-    private func setupUserDefaults() {
-        NSUserDefaults.standardUserDefaults().registerDefaults([
-            "bool_1":true,
-            "bool_2":false]
-        )
-    }
-    
     // MARK: - Public
     
     func reloadTableView() {
         self.settingsTableViewDatasource = SettingsTableViewDatasource(settingsController: self)
+    }
+    
+    func toggleBrowsing(sender:UISwitch) {
+        
+        let isBrowsingOn = NSUserDefaults.standardUserDefaults().boolForKey(AppConstants.UserDefaults.isBrowsingEnabled)
+        
+        NSUserDefaults.standardUserDefaults().setBool(
+            sender.on,
+            forKey: AppConstants.UserDefaults.isBrowsingEnabled)
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        if isBrowsingOn {
+            self.appDelegate.mpcManager.browser.stopBrowsingForPeers()
+        } else {
+            self.appDelegate.mpcManager.browser.startBrowsingForPeers()
+        }
+        
+        self.tableView.reloadSections(
+            NSIndexSet(index: 1),
+            withRowAnimation: UITableViewRowAnimation.Automatic)
+    }
+    
+    func toggleAdvertising(sender:UISwitch) {
+        
+        let isAdvertisingOn = NSUserDefaults.standardUserDefaults().boolForKey(AppConstants.UserDefaults.isAdvertisingEnabled)
+        
+        NSUserDefaults.standardUserDefaults().setBool(
+            sender.on,
+            forKey: AppConstants.UserDefaults.isAdvertisingEnabled)
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
+        if isAdvertisingOn {
+            self.appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
+        } else {
+            self.appDelegate.mpcManager.advertiser.startAdvertisingPeer()
+        }
+    }
+    
+    func disableAdvertising() {
+        self.appDelegate.mpcManager.advertiser.stopAdvertisingPeer()
+        self.appDelegate.isAdvertising = false
     }
 }

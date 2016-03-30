@@ -35,13 +35,10 @@ class ViewController: UIViewController {
         }
     }
     
-    
     // MARK:  Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         // setup tableview
         
@@ -59,7 +56,5 @@ class ViewController: UIViewController {
         self.startTableViewDelegate = StartControllerTableViewDelegate(startController: self)
         self.startTableViewDatasource = StartControllerTableViewDatasoure(startController: self)
     }
-    
-    
 }
 

@@ -14,7 +14,7 @@ enum SettingsEntry {
 }
 
 protocol SettingsEntryProtocol {
-    func createCell(tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell
+    func createCell(settingsController:SettingsController, tableView:UITableView, indexPath: NSIndexPath) -> UITableViewCell
 }
 
 class SettingsEntryFactory {
