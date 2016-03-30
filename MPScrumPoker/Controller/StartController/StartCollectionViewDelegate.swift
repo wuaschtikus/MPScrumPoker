@@ -33,7 +33,7 @@ class StartCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLayout,
     
     func calculateItemHeight() -> CGFloat {
         if let windowBounds = UIApplication.sharedApplication().keyWindow?.rootViewController?.view.frame.size {
-            var height = windowBounds.height - CGFloat(LayoutConstants.rows * (LayoutConstants.spacing + 2)) - 89
+            var height = windowBounds.height - CGFloat(LayoutConstants.rows * (LayoutConstants.spacing + 2)) - 64
             height = height / 3
             
             return height
@@ -56,7 +56,7 @@ class StartCollectionViewDelegate: NSObject, UICollectionViewDelegateFlowLayout,
     // MARK: - UICollectionViewDelegateFlowLayout
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 14, bottom: 10, right: 14)
+        return UIEdgeInsets(top: 10, left: 14, bottom: 0, right: 14)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
